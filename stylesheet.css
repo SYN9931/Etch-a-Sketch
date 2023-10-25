@@ -4,8 +4,14 @@ body{
 }
 
 div{
+    display: flex;
+    flex-wrap: wrap;
     border: 1px solid red;
     height: fit-content;
-    width:fit-content;
-
+    width: fit-content;
+    
+}
+.squareDiv{
+    height: 50px;
+    width: 50px;
 }
