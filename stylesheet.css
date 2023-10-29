@@ -23,3 +23,7 @@ body{
     text-align: center;
 }
 
+.grid-item:hover{
+    background-color: turquoise;
+}
+
