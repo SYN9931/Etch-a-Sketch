@@ -12,3 +12,16 @@ function makeRows (rows, cols){
 };
 
 makeRows(10,10);
+function background(){
+    const clr1  ='rgb(65,224,208)';
+    return clr1;
+
+}
+
+let divs = document.querySelectorAll('div');
+for(let i=0; i<divs.length;i++){
+    divs[i].onmouseover=function(e){
+        e.target.style.backgroundColor=background();
+    }
+
+}
