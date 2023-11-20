@@ -27,7 +27,7 @@ function createChild(){
  childDiv.addEventListener(
     "mouseenter",
     (event) => {
-        event.target.style.background = "black";
+        event.target.style.background = "red";
     }
  );   
 }
@@ -40,7 +40,7 @@ function createLoop () {
     }
 }
 
-//initialize thee loop
+//initialize the loop
 createLoop();
 
 //create buttons for changing number of grid, delete color 
@@ -70,23 +70,23 @@ function createButton(){
 createButton();
 
 //Function to erase sketch
-function createEraser(){
+//function createEraser(){
     //create button for eraser
-    const eraserBtn = document.createElement("button");
-    mainDiv.appendChild(eraserBtn);
-    eraserBtn.setAttribute("id","eraserBtn");
-    eraserBtn.textContent = "Erase";
+  //  const eraserBtn = document.createElement("button");
+    //mainDiv.appendChild(eraserBtn);
+    //eraserBtn.setAttribute("id","eraserBtn");
+    //eraserBtn.textContent = "Erase";
 
     //add event for eraser button
-    eraserBtn.addEventListener(
-        "click",
-        ()=>{
-
-        });
-}
+    //eraserBtn.addEventListener(
+    //    "click",
+    //    ()=>{
+//
+  //      });
+//}
 
 //initialize eraser
-createEraser();
+//createEraser();
 
 //function to reset color
 function clearColor(){
@@ -109,3 +109,31 @@ function clearColor(){
 
 //initialize reset color button
 clearColor();
+
+//Function to clear grid
+function clearGrid() {
+    while(mainGrid.firstChild){
+        mainGrid.removeChild(mainGrid.firstChild);
+    }
+}
+
+//Function to change grid size
+function resizeGrid(userInput) {
+    for (i=0;i<userInput*userInput; i++){
+        //redeclare childDiv
+        //to access the element already created by DOM method
+        const childDiv = document.createElement("div");
+        mainGrid.appendChild(childDiv);
+        childDiv.setAttribute("class","childDiv");
+
+        //calculate size of squares each time grid changes size
+        childDiv.style.flexBasis = `calc(100%/${userInput})`;
+
+        //redeclare event listener for changing color when hovering over
+        childDiv.addEventListener(
+            "mouseenter",
+            (event)=> {event.target.style.background = "white";
+        }
+        );
+    }
+}
