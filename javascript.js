@@ -27,14 +27,14 @@ function createChild(){
  childDiv.addEventListener(
     "mouseenter",
     (event) => {
-        event.target.style.background = "red";
+        event.target.style.background = "white";
     }
  );   
 }
 
 //loop the creation of smaller grid
 const size = 16;
-function createLoop () {
+function createLoop() {
     for (i=0; i<size*size; i++){
         createChild();
     }
@@ -55,7 +55,6 @@ function createButton(){
     button.addEventListener(
         "click",
         ()=>{
-        j=1;
         userInput = prompt("Please specify desired grid size, between 1-100");
         if(userInput>100){
             alert ("Value too high, please retry")
@@ -68,25 +67,6 @@ function createButton(){
 
 //initialize size button
 createButton();
-
-//Function to erase sketch
-//function createEraser(){
-    //create button for eraser
-  //  const eraserBtn = document.createElement("button");
-    //mainDiv.appendChild(eraserBtn);
-    //eraserBtn.setAttribute("id","eraserBtn");
-    //eraserBtn.textContent = "Erase";
-
-    //add event for eraser button
-    //eraserBtn.addEventListener(
-    //    "click",
-    //    ()=>{
-//
-  //      });
-//}
-
-//initialize eraser
-//createEraser();
 
 //function to reset color
 function clearColor(){
@@ -111,11 +91,13 @@ function clearColor(){
 clearColor();
 
 //Function to clear grid
+//the following removes all the child nodes of the mainGrid node
 function clearGrid() {
     while(mainGrid.firstChild){
         mainGrid.removeChild(mainGrid.firstChild);
     }
 }
+
 
 //Function to change grid size
 function resizeGrid(userInput) {

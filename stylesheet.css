@@ -19,7 +19,7 @@ body{
     max-width: 800px;
     height: 800px;
     max-height: 800px;
-    background-color: aqua;
+    background-color: white;
     /*border: 1px solid red;*/
 
 }
@@ -27,14 +27,13 @@ body{
 .childDiv {
     text-align: center;
     background-color:pink;
-    border-color:white;
     flex-basis: calc(100%/16);
 }
 
 #button,
 #clearBtn,
 #eraserBtn {
-    background-color: black;
+    background-color: #22009b;
     border: solid;
     color: white;
     padding: 15px 32px;
