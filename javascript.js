@@ -21,13 +21,19 @@ createGrid();
 //create smaller grid
 function createChild(){
  const childDiv = document.createElement("div");
+
  mainGrid.appendChild(childDiv);
  childDiv.setAttribute("class","childDiv");
  //add eventlistener for changing grid background color on mouse enter
  childDiv.addEventListener(
     "mouseenter",
     (event) => {
-        event.target.style.background = "white";
+       // const randomBetween = (min, max) => min + Math.floor(Math.random()*(max-min + 1));
+        //const r = randomBetween(0,255);
+        //const g = randomBetween(0,255);
+        //const b = randomBetween(0,255);
+        //event.target.style.background =`rgb(${r},${g},${b})`;
+        event.target.style.background = `rgb(255,255,255)`;
     }
  );   
 }
